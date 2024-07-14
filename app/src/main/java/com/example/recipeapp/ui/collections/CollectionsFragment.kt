@@ -7,8 +7,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.recipeapp.R
+import com.example.recipeapp.adapter.MyRecipeAdapter
 import com.example.recipeapp.databinding.FragmentCollectionsBinding
+import com.example.recipeapp.utils.MarginItemDecorationVertical
 
 class CollectionsFragment : Fragment() {
 
@@ -28,6 +31,12 @@ class CollectionsFragment : Fragment() {
 
         _binding = FragmentCollectionsBinding.inflate(inflater, container, false)
         val root: View = binding.root
+
+        val recyclerCollections = binding.recyclerCollections
+        recyclerCollections.layoutManager = LinearLayoutManager(requireContext())
+        recyclerCollections.adapter = MyRecipeAdapter(listOf("", "", "", "", "", "", "",
+            "", "", "", "", "", "", "","", "", "", "", "", "", ""))
+        recyclerCollections.addItemDecoration(MarginItemDecorationVertical(requireContext(), R.dimen.bottom_margin))
         return root
     }
 

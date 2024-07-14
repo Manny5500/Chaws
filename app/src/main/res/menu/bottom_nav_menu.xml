@@ -19,7 +19,7 @@
     <item
         android:id="@+id/navigation_collections"
         android:icon="@drawable/restaurant"
-        android:title= "@string/collections" />
+        android:title="My Recipes" />
 
     <item
         android:id="@+id/navigation_profile"
