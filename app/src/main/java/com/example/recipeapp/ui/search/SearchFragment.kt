@@ -39,13 +39,13 @@ class SearchFragment : Fragment() {
             Category("Appetizers", R.drawable.appetizergogo),
             Category("Main Course", R.drawable.category_maindish),
             Category("Side Dishes", R.drawable.category_sidedish),
-            Category("Desserts", R.drawable.dessert),
+            Category("Desserts", R.drawable.category_dessert),
             Category("Snacks", R.drawable.category_snacks),
-            Category("Soups", R.drawable.appetizergogo),
-            Category("Drinks", R.drawable.appetizergogo),
-            Category("Breakfast", R.drawable.appetizergogo),
+            Category("Soups", R.drawable.category_soup),
+            Category("Drinks", R.drawable.category_drinks),
+            Category("Breakfast", R.drawable.category_breakfast),
             Category("Lunch", R.drawable.lunch),
-            Category("Dinner", R.drawable.appetizergogo),
+            Category("Dinner", R.drawable.category_dinner),
         ))
         recyclerCategory.addItemDecoration(MarginItemDecorationGrid(requireContext(), R.dimen.margin))
 
