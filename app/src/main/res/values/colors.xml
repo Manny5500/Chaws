@@ -13,4 +13,10 @@
     <color name="food_1_2">#FFD3B6</color>
     <color name="food_1_3">#FCF8F3</color>
     <color name="food_1_4">#698474</color>
+
+
+    <color name="food_2_1">#D6EFD8</color>
+    <color name="food_2_2">#80AF81</color>
+    <color name="food_2_3">#508D4E</color>
+    <color name="food_2_4">#1A5319</color>
 </resources>
