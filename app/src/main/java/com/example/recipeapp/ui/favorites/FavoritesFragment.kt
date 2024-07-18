@@ -36,7 +36,6 @@ class FavoritesFragment : Fragment() {
         recylerFavorites.layoutManager = LinearLayoutManager(requireContext())
         recylerFavorites.adapter = FavoritesAdapter(listOf("Item 3-1", "Item 3-2", "Item 3-3",
             "Item 3-1", "Item 3-2", "Item 3-3",
-            "Item 3-1", "Item 3-2", "Item 3-3",
             "Item 3-1", "Item 3-2", "Item 3-3"))
         recylerFavorites.addItemDecoration(MarginItemDecorationVertical(requireContext(), R.dimen.bottom_margin))
 

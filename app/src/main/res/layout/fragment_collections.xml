@@ -24,8 +24,8 @@
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/food_1_4"
             android:foregroundTint="@color/white"
+            app:backgroundTint="@color/food_1_4"
             android:elevation="4dp"
             android:clickable="true"
             app:tint= "@color/white"

@@ -1,7 +1,10 @@
 package com.example.recipeapp.adapter
 
+import android.animation.ObjectAnimator
+import android.animation.PropertyValuesHolder
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.recipeapp.databinding.ItemCategoryBinding
 import com.example.recipeapp.model.Category
@@ -21,6 +24,8 @@ class CategoryAdapter(private val items: List<Category>) :
     override fun getItemCount(): Int {
         return items.size
     }
+
+
 
     inner class ViewHolder(val binding: ItemCategoryBinding) : RecyclerView.ViewHolder(binding.root)
 }

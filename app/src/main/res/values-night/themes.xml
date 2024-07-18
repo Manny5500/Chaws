@@ -14,4 +14,8 @@
         <!-- Customize your theme here. -->
         <item name="android:fontFamily">@font/poppins</item>
     </style>
+
+    <style name="HeadingTextStyle">
+        <item name="android:textSize">24sp</item>
+    </style>
 </resources>

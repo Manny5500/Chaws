@@ -16,12 +16,12 @@
 
             <TextView
                 android:id="@+id/textNew"
+                style = "@style/HeadingTextStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:text="New"
-                android:textSize="25sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toTopOf="@id/recyclerNew"/>
@@ -43,7 +43,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:text="Trending"
-                android:textSize="25sp"
+                style="@style/HeadingTextStyle"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/recyclerNew"
                 app:layout_constraintBottom_toTopOf="@id/recyclerTrending"/>
