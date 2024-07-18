@@ -1,17 +1,17 @@
 package com.example.recipeapp.adapter
 
-import android.animation.Animator
-import android.animation.AnimatorListenerAdapter
+
 import android.animation.ObjectAnimator
 import android.animation.PropertyValuesHolder
+import android.content.Intent
 import android.graphics.Color
 import android.graphics.PorterDuff
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.recipeapp.R
+import com.example.recipeapp.RecipeActivity
 import com.example.recipeapp.databinding.ItemFavoriteBinding
 
 class FavoritesAdapter(private val items: List<String>) :
@@ -22,6 +22,13 @@ class FavoritesAdapter(private val items: List<String>) :
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+
+        holder.binding.root.setOnClickListener{
+            val context = holder.itemView.context
+            val intent =  Intent(context, RecipeActivity::class.java)
+            context.startActivity(intent)
+        }
+
         holder.binding.imgHeart.setOnClickListener{
             holder.binding.imgHeart.setImageResource(R.drawable.heart__1_)
             holder.binding.imgHeart.setColorFilter(Color.parseColor("#ff0000"), PorterDuff.Mode.SRC_IN)
@@ -44,8 +51,6 @@ class FavoritesAdapter(private val items: List<String>) :
             repeatCount = 1
             repeatMode = ObjectAnimator.REVERSE
         }
-
-
         scaleDown.start()
     }
 

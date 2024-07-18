@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".RecipeActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:backgroundTint="@android:color/transparent"
+        android:outlineSpotShadowColor="@android:color/transparent"
+        >
+
+       <androidx.constraintlayout.widget.ConstraintLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           app:liftOnScroll="true"
+           app:layout_scrollFlags="scroll|enterAlways">
+
+           <ImageView
+               android:id="@+id/imgBack"
+               android:layout_width="28dp"
+               android:layout_height="28dp"
+               app:tint="@color/food_1_4"
+               android:src="@drawable/back__1_"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintBottom_toBottomOf="parent"
+               app:layout_constraintTop_toTopOf="parent"
+               android:layout_margin="10dp">
+           </ImageView>
+
+           <ImageView
+               android:id="@+id/imgShare"
+               android:layout_width="28dp"
+               android:layout_height="28dp"
+               app:tint="@color/food_1_4"
+               android:src="@drawable/share__1_"
+               app:layout_constraintEnd_toEndOf="parent"
+               app:layout_constraintBottom_toBottomOf="parent"
+               app:layout_constraintTop_toTopOf="parent"
+               android:layout_margin="10dp">
+           </ImageView>
+
+           <ImageView
+               android:id="@+id/imgHeart"
+               android:layout_width="28dp"
+               android:layout_height="28dp"
+               app:tint="@color/food_1_4"
+               android:src="@drawable/heart__2_"
+               app:layout_constraintEnd_toStartOf="@+id/imgShare"
+               app:layout_constraintBottom_toBottomOf="parent"
+               app:layout_constraintTop_toTopOf="parent"
+               android:layout_margin="10dp">
+           </ImageView>
+
+       </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textTitle"
+                style="@style/HeadingTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Pancake"
+                app:layout_constraintBottom_toTopOf="@id/imgRecipe"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"></TextView>
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/imgRecipe"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/pancake"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginStart="5dp"
+                app:layout_constraintTop_toBottomOf="@id/textTitle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/textIngredients"
+                app:shapeAppearance = "@style/roundedImageViewStyle">
+            </com.google.android.material.imageview.ShapeableImageView>
+
+            <TextView
+                android:id="@+id/textIngredients"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:text="Ingredients"
+                style="@style/SubHeadingTextStyle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imgRecipe">
+            </TextView>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerIngredients"
+                style = "@style/recyclerViewStyle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textIngredients">
+            </androidx.recyclerview.widget.RecyclerView>
+
+            <TextView
+                android:id="@+id/textProcedures"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Procedure"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
+                style="@style/SubHeadingTextStyle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/recyclerIngredients">
+            </TextView>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerProcedures"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style = "@style/recyclerViewStyle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textProcedures">
+            </androidx.recyclerview.widget.RecyclerView>
+
+            <TextView
+                android:id="@+id/textRate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Rate this Recipe"
+                android:layout_marginTop="10dp"
+                style="@style/SubHeadingTextStyle"
+                android:gravity="center"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/recyclerProcedures">
+            </TextView>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutStars"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/textRate">
+
+                <ImageView
+                    android:id="@+id/starOne"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/starTwo"
+                    android:src="@drawable/baseline_star_24">
+                </ImageView>
+                <ImageView
+                    android:id="@+id/starTwo"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    app:layout_constraintTop_toTopOf="@id/starOne"
+                    app:layout_constraintStart_toEndOf="@id/starOne"
+                    app:layout_constraintEnd_toStartOf="@id/starThree"
+                    android:src="@drawable/baseline_star_24">
+                </ImageView>
+                <ImageView
+                    android:id="@+id/starThree"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    app:layout_constraintTop_toTopOf="@id/starTwo"
+                    app:layout_constraintStart_toEndOf="@id/starTwo"
+                    app:layout_constraintEnd_toStartOf="@id/starFour"
+                    android:src="@drawable/baseline_star_24">
+                </ImageView>
+                <ImageView
+                    android:id="@+id/starFour"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    app:layout_constraintTop_toTopOf="@id/starThree"
+                    app:layout_constraintStart_toEndOf="@id/starThree"
+                    app:layout_constraintEnd_toStartOf="@id/starFive"
+                    android:src="@drawable/baseline_star_24">
+                </ImageView>
+                <ImageView
+                    android:id="@+id/starFive"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    app:layout_constraintTop_toTopOf="@id/starFour"
+                    app:layout_constraintStart_toEndOf="@id/starFour"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:src="@drawable/baseline_star_24">
+                </ImageView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

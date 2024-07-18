@@ -8,7 +8,6 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.recipeapp.R
-import com.example.recipeapp.adapter.ContentAdapter
 import com.example.recipeapp.adapter.FavoritesAdapter
 import com.example.recipeapp.databinding.FragmentFavoritesBinding
 import com.example.recipeapp.utils.MarginItemDecorationVertical
